@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Product - Social Proof Study</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .stats {
+            margin: 20px 0;
+            font-size: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Introducing ZenWell - Your Path to Wellness</h1>
+        <p>Experience the best organic supplements for a healthier life.</p>
+        
+        <div class="stats" id="engagementStats">
+            <!-- Engagement numbers will be inserted here dynamically -->
+        </div>
+        
+        <button class="button" onclick="showSurvey()">Take the Survey</button>
+    </div>
+
+    <script>
+        // Simulate Group A and Group B
+        const urlParams = new URLSearchParams(window.location.search);
+        const group = urlParams.get('group') || 'A'; // Default to Group A
+        
+        const engagementData = {
+            'A': { likes: 10000, shares: 500, comments: "Thousands love this!" },
+            'B': { likes: 50, shares: 5, comments: "A few people have tried it." }
+        };
+        
+        document.getElementById('engagementStats').innerHTML = `
+            <p><strong>${engagementData[group].likes}</strong> Likes</p>
+            <p><strong>${engagementData[group].shares}</strong> Shares</p>
+            <p>"${engagementData[group].comments}"</p>
+        `;
+
+        function showSurvey() {
+            alert("Survey: Would you recommend this product? (Y/N)");
+        }
+    </script>
+</body>
+</html>
